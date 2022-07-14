@@ -246,7 +246,14 @@ let sampleString = "Hi, my name is Kylo."
   Create a variable called `totalFrogs` and set it equal to your function invoked, passing in the amount of gold you are willing to spend.
 */
 
-//CODE HERE
+const buyChocolateFrogs = gold => {
+  let frog = gold/3 
+  return frog
+}
+
+let totalFrogs = buyChocolateFrogs(3)
+
+console.log(totalFrogs)
 
 
 ////////////////// PROBLEM 20 ////////////////////
@@ -254,17 +261,39 @@ let sampleString = "Hi, my name is Kylo."
   You might have noticed a slight bug in the previous problem. If you were to pass in 4 gold, the function would return to you 1.3333... However, you can't really go to a store and by 1.333 products. You would just be able to purchase 1 product. Re-write the function you used in the previous problem (give it the same name, just add a 2 to the end of it) that fixes this bug. Invoke the function and store the returned value to a variable called `totalFrogs2`.
 */
 
-//CODE HERE
+const buyChocolateFrogs2 = gold => {
+  let frog = gold/3 
+  return Math.floor(frog)
+
+}
+
+let totalFrogs2 = buyChocolateFrogs2(5)
+
+console.log(totalFrogs2)
 
 
 ////////////////// PROBLEM 21 ////////////////////
-let sampleArray = [0,1,2,3,4,7,5,6,8,9]
+let sampleArray = [0,1,2,3,4,5,6,7,8,9]
 /*
   Write a function that takes in an array of numbers as an argument. In the body of the function, write logic to determine if the array is in ascending order. The function should return true, if it is sorted in ascending order, false if it is not. Create a variable, `arrayIsAscending` and set it equal to your function invoked. Use the sample array to test this function.
 */
 
-//CODE HERE
+const orderArray = array => {
+  let order = true;
+  for (let i=0; i<array.length; i++){
+    for (let x=1; x<array.length; x++){
+      if (array[x] > array[i]){
+        return order
+      }else{
+        order = false
+      }
+    }
+  }
+}
 
+let arrayIsAscending = orderArray(sampleArray)
+
+console.log(arrayIsAscending)
 
 ////////////////// PROBLEM 22 ////////////////////
 
